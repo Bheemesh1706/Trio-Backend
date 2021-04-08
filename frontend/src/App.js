@@ -4,30 +4,32 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
+ import Navbar from './Components/nav'
+import { Form } from './LoginComponent/form';
 
-import {About,Home} from './about'
+
 
 function App() {
   return (
     <Router>
     <div className="App">
-  
-       <Link exact={true} to="/"> Login </Link>
-       <Link exact={true} to="/about"> About </Link>
+        <Navbar/>
+        <div className="main">
+        <div className="left"></div>
+        <Switch>
+          <Route path="/login">
+            <Form page="Login"/>
+          </Route>
+          <Route path="/">
+            <Form page="Register"/>
+          </Route>
+        </Switch>
+        </div>
     
     </div>
 
-    <Switch>
-           <Route path = "/about">
-                <About/>
-          </Route>
-          <Route path = "/">
-                <Home/>
-          </Route>
-          
-    </Switch>
+   
   </Router>);
 }
 

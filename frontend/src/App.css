@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+* {
+    margin: 0%;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input:focus {
+    outline: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    background-color: #ffffff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navStyle {
+    display: grid;
+    background-color: #39FF14;
+    padding: 15px;
+    grid-auto-rows: auto;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+nav li {
+    display: block;
+    float: right;
+    margin: 5px;
+    padding: 5px 8px 5px 8px;
+    background-color: white;
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: normal;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 2.5px;
+    border-top-left-radius: 2.5px;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav li a {
+    text-decoration: none;
+}
+
+nav li:hover {
+    background-color: #d3cdcd;
+    transition: 0.5s;
+}
+
+
+
+.main {
+    display: flex;
+    min-height: 100vh;
+    align-items: stretch;
+}
+
+.main .left,
+.main .right {
+    flex: 1;
+}
+
+.main .right {
+    padding: 50px;
+}
+
+.main .right form {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0px 0 300px;
+    padding-top: 100px;
+    padding-bottom: 70px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #BEB9B9;
+    border-radius: 50px;
+}
+
+.main .right form button {
+    margin: 0 80px;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: white;
+    transition: 0.4s;
+    cursor: pointer;
+    outline: none;
+
+}
+
+.main .right form button:hover {
+    background-color: #e7e7e7;
+}
+
+.main .right form input {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: none;
+}
+
+.main .right form label {
+    text-align: center;
+    padding-bottom: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+    font-weight: lighter;
 }
