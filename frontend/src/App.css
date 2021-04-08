@@ -1,6 +1,6 @@
 * {
     margin: 0%;
-
+    color: black;
 }
 
 input:focus {
@@ -9,6 +9,7 @@ input:focus {
 
 body {
     background-color: #ffffff;
+    overflow: hidden;
 }
 
 .navStyle {
@@ -20,7 +21,7 @@ body {
     border-bottom-left-radius: 25px;
 }
 
-nav li {
+nav li p {
     display: block;
     float: right;
     margin: 5px;
@@ -34,13 +35,14 @@ nav li {
     border-top-right-radius: 2.5px;
     border-top-left-radius: 2.5px;
 
+
 }
 
-nav li a {
-    text-decoration: none;
+nav li {    list-style: none;
 }
 
-nav li:hover {
+
+nav li p:hover {
     background-color: #d3cdcd;
     transition: 0.5s;
 }
