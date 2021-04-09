@@ -5,7 +5,8 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
- import Navbar from './Components/nav'
+
+import Navbar from './Components/nav'
 import { Form } from './LoginComponent/form';
 
 
