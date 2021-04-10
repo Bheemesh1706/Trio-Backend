@@ -1,5 +1,5 @@
 import React,{useState}from "react";
-import {sendData} from '../BackendServices/services'
+import {sendData,dataValidation} from '../BackendServices/services'
 
 function Form ({page})
 {
@@ -15,8 +15,8 @@ function Form ({page})
     function handleRegister(e)
     {
        e.preventDefault()
-        console.log('Register')
-        sendData(formdata)
+        if( dataValidation(formdata))
+                sendData(formdata)
     }
 
 
