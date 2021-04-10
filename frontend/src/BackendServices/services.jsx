@@ -22,23 +22,23 @@ import{API_HOST} from '../Components/config'
                    const regex_name= /^[a-zA-Z0-9_.]{8,15}$/ 
                    const regex_email = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
                    const regex_password = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/
+                   var error_message=[]
                             
                             if (!regex_name.test(data.username))
                             {
-                                console.log('Inavlid Name')
+                                 error_message.push({error: "Username not matched with rules",field: 'Username' })
+                                 console.log('u')
                             }
                             if (!regex_password.test(data.password))
                             {
-                                console.log('Invalid Password')
+                                error_message.push({error: "Password not matched with rules",field: 'Password' })
                             }
                             if(!regex_email.test(data.email))
                             {
-                                console.log('Invalid Email')
+                                error_message.push({error: "Email not matched with rules",field: 'Email' })
                             }
-                            else
-                            {
-                                return true;
-                            }
+                           
+                            return error_message;
                                   
                 }
                 catch(error)
