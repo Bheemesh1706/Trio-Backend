@@ -27,7 +27,7 @@ import{API_HOST} from '../Components/config'
                             if (!regex_name.test(data.username))
                             {
                                  error_message.push({error: "Username not matched with rules",field: 'Username' })
-                                 console.log('u')
+                               
                             }
                             if (!regex_password.test(data.password))
                             {

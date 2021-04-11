@@ -26,9 +26,9 @@ function Form ({page})
             console.log('Success')
          }
         else
-        {       console.log(error_message)
-                error_message.map( (e)=> { setErrorData({...errordata, [e.field]: e.error}) } )
-                // error_message.map( (a) => { console.log(a.field)}) 
+        {     
+                error_message.forEach( (e)=> { setErrorData( p =>({...p, [e.field]: e.error})) } )
+               
         }
 
                 
