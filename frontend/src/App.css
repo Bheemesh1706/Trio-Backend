@@ -116,3 +116,9 @@ nav li p:hover {
     font-size: 25px;
     font-weight: lighter;
 }
+
+.error1, .error2, .error3 {
+    text-align: center;
+    color: red;
+    padding-bottom:5px;
+}
