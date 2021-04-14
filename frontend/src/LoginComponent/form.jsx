@@ -1,6 +1,5 @@
 import React,{useEffect}from "react";
 import {sendData} from '../BackendServices/services';
-import {useLocation} from 'react-router-dom';
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -20,20 +19,20 @@ function Form ({page})
        resolver: yupResolver(schema)
    })
    
-    let location = useLocation();
-    
-    useEffect(() => {}, [location]);
+   
 
     function handleLogin(e)
     {console.log('login')
-        //sendData(formdata)
+        //sendData(e)
     }
 
     function handleRegister(e)
     {
-     window.location.replace('/');
+     
        console.log(e)
-       console.log('register')         
+       console.log('register')   
+
+      sendData(e)   
     }
 
 

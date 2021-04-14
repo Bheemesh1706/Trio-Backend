@@ -40,7 +40,12 @@ module Trio
           origins '*'
           resource '*', headers: :any, methods: [:get, :post, :options]
         end
-      end
+    end
+
+    config.generators do |g|
+        g.orm :mongoid
+    end
+    
       
   end
 

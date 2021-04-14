@@ -56,6 +56,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
+    bcrypt (3.1.16)
     bootsnap (1.7.3)
       msgpack (~> 1.0)
     bson (4.12.0)
@@ -72,14 +73,14 @@ GEM
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    loofah (2.9.0)
+    loofah (2.9.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (1.0.1)
     method_source (1.0.0)
-    mini_mime (1.0.3)
+    mini_mime (1.1.0)
     mini_portile2 (2.5.0)
     minitest (5.14.4)
     mongo (2.14.0)
@@ -89,7 +90,7 @@ GEM
       mongo (>= 2.7.0, < 3.0.0)
     msgpack (1.4.2)
     nio4r (2.5.7)
-    nokogiri (1.11.2)
+    nokogiri (1.11.3)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
     puma (4.3.7)
@@ -154,6 +155,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)
   byebug
   listen (~> 3.2)
