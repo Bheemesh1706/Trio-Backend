@@ -7,7 +7,8 @@ import {
 } from "react-router-dom";
 
 import Navbar from './Components/nav'
-import { Form } from './LoginComponent/form';
+import { RegisterForm } from './LoginComponent/RegisterForm';
+import {LoginForm} from './LoginComponent/LoginForm'
 
 
 
@@ -20,10 +21,10 @@ function App() {
         <div className="left"></div>
         <Switch>
           <Route path="/login">
-            <Form page="Login"/>
+            <LoginForm/>
           </Route>
           <Route path="/">
-            <Form page="Register"/>
+            <RegisterForm/>
           </Route>
         </Switch>
         </div>
