@@ -28,21 +28,14 @@ import{API_HOST} from '../Components/config'
                                 username: data.Username,
                                 password: data.Password,
                             })
-                            console.log()
                 }
                 
-            catch(error){console.log(error) } 
+            catch(error){
+                console.log(error.response.data.error_message) 
+                document.getElementById('error').innerText = error.response.data.error_message
+            } 
   }
 
-// const getData = async(data)=> {
-            
-//             try{console.log("get_axiso")
-//                          console.log(data)
-//                            const response = await axi.post(`${API_HOST}/login`)
-                            
-//                 }
-//             catch(error){console.log(error) } 
-//   }
 
 
   export {sendDataLogin,sendDataRegister}

@@ -33,6 +33,7 @@ function LoginForm ()
             <p className="error2">{errors.Username?.message}</p>  
             <input type="password" id="password" placeholder="Password" name='Password' {...register('Password')}/>
              <p className="error3">{errors.Password?.message}</p>   
+             <p id = "error"></p>
             <button type='submit'>Login</button>
         </form>
     </div>

@@ -38,7 +38,8 @@ nav li p {
 
 }
 
-nav li {    list-style: none;
+nav li {
+    list-style: none;
 }
 
 
@@ -117,8 +118,16 @@ nav li p:hover {
     font-weight: lighter;
 }
 
-.error1, .error2, .error3 {
+.error1,
+.error2,
+.error3 {
     text-align: center;
     color: red;
-    padding-bottom:5px;
+    padding-bottom: 5px;
+}
+
+#error {
+    text-align: center;
+    color: red;
+    padding-bottom: 5px;
 }
