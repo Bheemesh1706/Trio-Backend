@@ -1,12 +1,15 @@
-import React,{useEffect}from "react";
-import {sendDataLogin} from '../BackendServices/services';
+import React,{useEffect,useState}from "react";
+import {sendDataLogin,get_username} from '../BackendServices/services';
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {loginSchema} from "../LoginComponent/Schema"
+import  {Redirect} from  "react-router-dom"
 
 
-function LoginForm ()
-{
+function LoginForm ({usernameProps})
+{   
+    const [redirect,setRedirect] = useState(null)
+    const [username,setUsername] = usernameProps
    
    const  {register,handleSubmit,reset,formState: { errors } } = useForm({
        resolver: yupResolver(loginSchema)
@@ -14,18 +17,25 @@ function LoginForm ()
    
    useEffect(()=>{console.log('reset')
        reset()},[])
-
+    
 
    const handleLogin  = (e) =>
     {
      
        console.log(e)
-       console.log('Login')   
+       console.log('Login') 
+       sendDataLogin(e).then((a)=>{ 
+           if(a === 'Success!')   
+           {setUsername(e.Username)
+            setRedirect('/chatRoom')}
+        })
 
-       sendDataLogin(e)
-     
+        console.log(username)
+    
     }
     
+    if (redirect) return <Redirect to ={redirect}/>
+
     return(<div className="right">
         <form onSubmit={handleSubmit(handleLogin)}>
             <label>Login</label>

@@ -9,7 +9,7 @@ input:focus {
 
 body {
     background-color: #ffffff;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .navStyle {
@@ -130,4 +130,31 @@ nav li p:hover {
     text-align: center;
     color: red;
     padding-bottom: 5px;
+}
+
+.right .chat h1 {
+    text-align: center;
+}
+
+.right .chat {
+    margin: 15px;
+}
+
+.right .chatbox {
+    display: flex;
+    background-color: blue;
+    padding: 100% 10% 10% 10%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+}
+
+.right .chatbox .message {
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    text-align: center;
 }
