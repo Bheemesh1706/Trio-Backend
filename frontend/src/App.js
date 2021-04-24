@@ -11,6 +11,7 @@ import { RegisterForm } from './LoginComponent/RegisterForm';
 import {LoginForm} from './LoginComponent/LoginForm'
 import Chat from './ChatComponents/Chat'
 import useLocalStorage from './hooks/uselocalstorage'
+import Rooms from './Components/Rooms'
 
 
 
@@ -27,6 +28,7 @@ function App() {
         <div className="left">
           <Switch>
             <Route path="/chatRoom">
+              <Rooms/>
               <OnlineUsers/>
             </Route>
           </Switch>

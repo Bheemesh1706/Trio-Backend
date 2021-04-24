@@ -1,12 +1,12 @@
 import React,{useEffect,useState}from "react";
-import {sendDataLogin,get_username} from '../BackendServices/services';
+import {sendDataLogin} from '../BackendServices/services';
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {loginSchema} from "../LoginComponent/Schema"
 import  {Redirect} from  "react-router-dom"
 
 
-function LoginForm ({usernameProps})
+export function LoginForm ({usernameProps})
 {   
     const [redirect,setRedirect] = useState(null)
     const [username,setUsername] = usernameProps
@@ -49,5 +49,3 @@ function LoginForm ({usernameProps})
     </div>
     );
 }
-
-export {LoginForm};

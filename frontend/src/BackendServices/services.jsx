@@ -48,6 +48,36 @@ import{API_HOST} from '../Components/config'
       
   }
 
+  const sendRoomData = async(data) =>
+  {
+      try
+      {       console.log(data)
+              const response = await axi.post(`${API_HOST}/rooms`, {
+                                roomname: data.roomname
+                            })
+             console.log('after room')
+             console.log(response)
+
+      }
+      catch(error)
+      {
+          console.log(error)
+      }
+  }
+
+  const getRooms = async() =>
+  {
+      try
+      {  console.log('getroom')
+         const response =  await axi.get(`${API_HOST}/rooms`)
+         return response;
+      }
+      catch(error)
+      {
+          console.log(error)
+      }
+  }
 
 
-  export {sendDataLogin,sendDataRegister,handleLogout}
+
+  export {sendDataLogin,sendDataRegister,handleLogout,sendRoomData,getRooms}
