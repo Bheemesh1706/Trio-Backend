@@ -154,13 +154,7 @@ nav li p:hover {
 
 }
 
-.right .chatbox .message {
-    width: 100%;
-    border-radius: 10px;
-    border: none;
-    padding: 10px;
-    text-align: center;
-}
+
 
 .main .left .roomname form {
     display: flex;
@@ -191,4 +185,31 @@ nav li p:hover {
     transition: 0.4s;
     cursor: pointer;
     outline: none;
+}
+
+
+.main .right .chatbox .formMessage input {
+    padding: 5px;
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+
+
+}
+
+.main .right .chatbox .formMessage {
+    padding: 0;
+    margin: 0px 0px 0px 90px;
+    display: flex;
+    flex-direction: row;
+
+
+
+}
+
+.main .right .chatbox .formMessage button {
+  margin: 0;
+  border-radius: 0;
+  background-color: gray;
+
 }

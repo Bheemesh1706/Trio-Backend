@@ -37,6 +37,15 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
+
+  def user_id
+    if @user = User.find_by(username: params[:user][:username])
+       render json: @user.id
+    else
+       render json:  {error_message: "Something Went Wrong " }, status: 420
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

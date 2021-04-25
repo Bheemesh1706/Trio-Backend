@@ -78,6 +78,35 @@ import{API_HOST} from '../Components/config'
       }
   }
 
+  const getMessages = async() =>
+  {
+      try
+      {
+        console.log('message')
+        const response = await axi.get(`${API_HOST}/messages`)
+        return response.data
+      }
+      catch(error)
+      {
+          console.log(error)
+      }
+  }
+    const getUserid = async(data) =>
+  {
+      try
+      {
+        console.log('message')
+        const response = await axi.post(`${API_HOST}/username`,{
+            username: data
+        })
+        return response.data.$oid
+      }
+      catch(error)
+      {
+          console.log(error)
+      }
+  }
 
 
-  export {sendDataLogin,sendDataRegister,handleLogout,sendRoomData,getRooms}
+
+  export {sendDataLogin,sendDataRegister,handleLogout,sendRoomData,getRooms,getMessages,getUserid}

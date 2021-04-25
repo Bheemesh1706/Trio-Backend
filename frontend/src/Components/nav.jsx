@@ -6,7 +6,7 @@ import {
 import {handleLogout} from '../BackendServices/services'
 
 export default function Navbar({usernameProps}){
-    const [username,setUsername] = usernameProps
+    const [username] = usernameProps
     const [redirect,setRedirect] = useState(null)
 
     if (redirect) return <Redirect to ={redirect}/>

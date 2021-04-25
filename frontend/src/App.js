@@ -38,7 +38,7 @@ function App() {
             <LoginForm usernameProps = {usernameProps} />
           </Route>
            <Route path="/chatRoom">
-            <Chat/>
+            <Chat  usernameProps = {usernameProps} />
           </Route>
           <Route path="/">
             <RegisterForm/>
