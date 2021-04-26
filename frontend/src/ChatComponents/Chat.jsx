@@ -25,16 +25,20 @@ export default function Chat({usernameProps}) {
         reset()
         addSubscribers()
         getMessages().then((e)=>{setMessages(e) 
-        console.log(e)})
+            console.log(e) })
         getUserid(username).then((e)=>{setId(e)
         console.log(e)} )
        },[])
+
+    useEffect(()=>{reset()},[message])
 
       
 
     function handleMessage(e){
         console.log(e)
         sendMessage(e)
+        console.log(message)
+       // messages.push(message)
    
     }
 
@@ -47,7 +51,7 @@ export default function Chat({usernameProps}) {
             {
                 connected: () => console.log('connected'),
                 disconnected: () => console.log('disconnected'),
-                received: data => console.log(data),
+                received: data => setMessage(data),
 
             }
         )
@@ -66,14 +70,16 @@ export default function Chat({usernameProps}) {
 
         <div className="chatbox">
 
-                {/* {message.map(d => (<p className="text" key={d.id}>{d.body}</p>))} */}
-             
-
+            <div className="Scroll">
+                {messages?.map((d,index)=> (<p className="text" key={index}>{username}:{d.body}</p>))}
+            </div>
+            
             <form className="formMessage"  onSubmit= {handleSubmit(handleMessage)} >
              <input type="text"  placeholder="Text" name='body'  {...register('body')}/>
              <input type="hidden" name="user_id" value={id} {...register('user_id')}></input>
              <button type="submit" className ="enter">Enter</button>
             </form>
+
         </div>
     </div>
     );

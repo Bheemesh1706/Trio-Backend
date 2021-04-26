@@ -145,8 +145,9 @@ nav li p:hover {
 
 .right .chatbox {
     display: flex;
+    flex-direction: column;
     background-color: blue;
-    padding: 100% 10% 10% 10%;
+    padding: 10% 10% 10% 7%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 20px;
@@ -199,7 +200,7 @@ nav li p:hover {
 
 .main .right .chatbox .formMessage {
     padding: 0;
-    margin: 0px 0px 0px 90px;
+    margin: 0px 0px 0px 15px;
     display: flex;
     flex-direction: row;
 
@@ -208,8 +209,23 @@ nav li p:hover {
 }
 
 .main .right .chatbox .formMessage button {
-  margin: 0;
-  border-radius: 0;
-  background-color: gray;
+    margin: 0;
+    border-radius: 0;
+    background-color: gray;
+
+}
+
+.main .right .chatbox .Scroll {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
+    background-color: honeydew;
+    margin: 0px 0px 40px 0px;
+    width: 380px;
+    height: 355px;
+    border-radius: 25px;
+    padding: 25px 0 0 25px;
 
 }
