@@ -3,31 +3,60 @@ import { getMessages } from '../BackendServices/services';
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import {getUserid} from '../BackendServices/services'
+import {getUserid,sendMessage} from '../BackendServices/services'
+import {createConsumer} from '@rails/actioncable'
 
 export default function Chat({usernameProps}) {
 
+    const URL = 'ws://localhost:3001/cable'
+    const consumer = createConsumer(URL)
+
     const messageschema = yup.object().shape({body: yup.string().required(),
     user_id: yup.string().required(),
-    timestamps: yup.string().required()})
+    timestamps: yup.string()})
 
     const  {register,handleSubmit,reset,formState: { errors } } = useForm({ resolver: yupResolver(messageschema) })
     const [username] = usernameProps
-    const [message,setMessage] = useState([])
+    const [messages,setMessages] = useState([])
+    const [message,setMessage] = useState('')
     const [id,setId] = useState(null)
-    const [time,setTime] = useState(null)
 
     useEffect(()=>{
-        getMessages().then((e)=>{ setMessage(e) })
-        getUserid(username).then((e)=>{setId(e)} )
-        setTime(Date().toLocaleString())
         reset()
-    },[])
+        addSubscribers()
+        getMessages().then((e)=>{setMessages(e) 
+        console.log(e)})
+        getUserid(username).then((e)=>{setId(e)
+        console.log(e)} )
+       },[])
+
+      
 
     function handleMessage(e){
         console.log(e)
+        sendMessage(e)
    
     }
+
+    function addSubscribers() {
+        consumer.subscriptions.create(
+            {
+                channel: 'ChatroomChannel',
+                username: username,
+            },
+            {
+                connected: () => console.log('connected'),
+                disconnected: () => console.log('disconnected'),
+                received: data => console.log(data),
+
+            }
+        )
+    }
+
+    // function removeSubscriber()
+    // {
+    //     consumer.disconnect()
+    // }
 
     return(
     <div className="right">
@@ -43,7 +72,6 @@ export default function Chat({usernameProps}) {
             <form className="formMessage"  onSubmit= {handleSubmit(handleMessage)} >
              <input type="text"  placeholder="Text" name='body'  {...register('body')}/>
              <input type="hidden" name="user_id" value={id} {...register('user_id')}></input>
-             <input type="hidden" name="timestamps" value={time} {...register('timestamps')}></input>
              <button type="submit" className ="enter">Enter</button>
             </form>
         </div>

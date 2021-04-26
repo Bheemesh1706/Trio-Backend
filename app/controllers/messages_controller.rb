@@ -7,7 +7,17 @@ class MessagesController < ApplicationController
   end
 
   def create
+    
     @message  = Message.new(message_params)
+    @message.timestamps = Time.now
+    
+    if @message.save
+      render json: @message
+        ActionCable.server.broadcast "chatroom_channel", @message.body
+    else
+      render json: @message.errors.full_messages, status: 420
+    end
+
   end
   
    private

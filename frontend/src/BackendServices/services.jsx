@@ -16,7 +16,7 @@ import{API_HOST} from '../Components/config'
                             })
                             console.log(data)
                 }
-            catch(error){console.log(error) } 
+            catch(error){console.log(error.response) } 
   }
 
   const sendDataLogin = async(data)=>
@@ -61,7 +61,7 @@ import{API_HOST} from '../Components/config'
       }
       catch(error)
       {
-          console.log(error)
+          console.log(error.response)
       }
   }
 
@@ -74,7 +74,7 @@ import{API_HOST} from '../Components/config'
       }
       catch(error)
       {
-          console.log(error)
+          console.log(error.response)
       }
   }
 
@@ -82,20 +82,18 @@ import{API_HOST} from '../Components/config'
   {
       try
       {
-        console.log('message')
         const response = await axi.get(`${API_HOST}/messages`)
         return response.data
       }
       catch(error)
       {
-          console.log(error)
+          console.log(error.response)
       }
   }
     const getUserid = async(data) =>
   {
       try
       {
-        console.log('message')
         const response = await axi.post(`${API_HOST}/username`,{
             username: data
         })
@@ -103,10 +101,28 @@ import{API_HOST} from '../Components/config'
       }
       catch(error)
       {
-          console.log(error)
+          console.log(error.rsponse)
+      }
+  }
+
+  const sendMessage = async(data) =>
+  {
+      try
+      {
+        const response = await axi.post(`${API_HOST}/messages`,
+        {
+            body: data.body,
+            user_id: data.user_id,
+            timestamps: ""
+        })
+        console.log(response)
+      }
+      catch(error)
+      {
+        console.log(error.response)
       }
   }
 
 
 
-  export {sendDataLogin,sendDataRegister,handleLogout,sendRoomData,getRooms,getMessages,getUserid}
+  export {sendDataLogin,sendDataRegister,handleLogout,sendRoomData,getRooms,getMessages,getUserid,sendMessage}
