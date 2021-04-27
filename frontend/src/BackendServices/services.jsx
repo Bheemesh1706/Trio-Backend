@@ -105,14 +105,14 @@ import{API_HOST} from '../Components/config'
       }
   }
 
-  const sendMessage = async(data) =>
+  const sendMessage = async(data,id) =>
   {
       try
       {
         const response = await axi.post(`${API_HOST}/messages`,
         {
             body: data.body,
-            user_id: data.user_id,
+            user_id: id,
             timestamps: ""
         })
         console.log(response)
@@ -123,6 +123,19 @@ import{API_HOST} from '../Components/config'
       }
   }
 
+  const getActive = async ()=>
+  {
+       try
+      {
+        const response = await axi.get(`${API_HOST}/sessions`)
+        console.log(response)
+      }
+      catch(error)
+      {
+        console.log(error.response.data)
+      }
+  }
 
 
-  export {sendDataLogin,sendDataRegister,handleLogout,sendRoomData,getRooms,getMessages,getUserid,sendMessage}
+
+  export {sendDataLogin,sendDataRegister,handleLogout,sendRoomData,getRooms,getMessages,getUserid,sendMessage,getActive}

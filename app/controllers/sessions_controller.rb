@@ -12,6 +12,15 @@ class SessionsController < ApplicationController
             render json: {error_message: "User name or Password Invalid"}, status: 420
         end
     end
+
+    def session_user
+        if session
+            data = session[:user_id]
+            render json: data
+        else
+            render json:  {error_message: "No seesion availabel"}, status: 420
+        end
+    end
     
   
 

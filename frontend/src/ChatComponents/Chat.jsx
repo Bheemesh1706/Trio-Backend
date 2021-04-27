@@ -12,33 +12,34 @@ export default function Chat({usernameProps}) {
     const consumer = createConsumer(URL)
 
     const messageschema = yup.object().shape({body: yup.string().required(),
-    user_id: yup.string().required(),
-    timestamps: yup.string()})
+    user_id: yup.string()})
 
     const  {register,handleSubmit,reset,formState: { errors } } = useForm({ resolver: yupResolver(messageschema) })
     const [username] = usernameProps
     const [messages,setMessages] = useState([])
     const [message,setMessage] = useState('')
-    const [id,setId] = useState(null)
+    const [Id,setId] = useState('')
+    
 
-    useEffect(()=>{
-        reset()
+    useEffect(()=>
+    {   reset()
         addSubscribers()
         getMessages().then((e)=>{setMessages(e) 
             console.log(e) })
-        getUserid(username).then((e)=>{setId(e)
-        console.log(e)} )
-       },[])
+    },[])
 
-    useEffect(()=>{reset()},[message])
+    useEffect(()=>{reset()
+    getUserid(username).then((e) =>{setId(e)})},[message])
 
       
 
     function handleMessage(e){
         console.log(e)
+        
         sendMessage(e)
         console.log(message)
-       // messages.push(message)
+        messages.push({body: message})
+        console.log(messages)
    
     }
 
@@ -51,7 +52,7 @@ export default function Chat({usernameProps}) {
             {
                 connected: () => console.log('connected'),
                 disconnected: () => console.log('disconnected'),
-                received: data => setMessage(data),
+                received: data => {if(data) setMessage(data)},
 
             }
         )
@@ -76,7 +77,9 @@ export default function Chat({usernameProps}) {
             
             <form className="formMessage"  onSubmit= {handleSubmit(handleMessage)} >
              <input type="text"  placeholder="Text" name='body'  {...register('body')}/>
-             <input type="hidden" name="user_id" value={id} {...register('user_id')}></input>
+                <p className="error3">{errors.email?.message}</p> 
+             <input type="hidden" name="user_id" value={Id} {...register('user_id')}></input>
+                <p className="error3">{errors.user_id?.message}</p> 
              <button type="submit" className ="enter">Enter</button>
             </form>
 
