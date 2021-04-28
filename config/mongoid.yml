@@ -1,5 +1,5 @@
 development:
-  clients:
+  clients: Mongo::Client.new(&apos;mongodb+srv://Imanity:39Ft4LgiQYzs3TZp@trio.e63dt.mongodb.net/chat_development?retryWrites=true&w=majority&apos;)
     default:
       uri: mongodb+srv://Imanity:39Ft4LgiQYzs3TZp@trio.e63dt.mongodb.net/chat_development?retryWrites=true&w=majority
       options:
