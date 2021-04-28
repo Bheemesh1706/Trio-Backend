@@ -39,8 +39,8 @@ module Trio
 
     config.middleware.insert_before 0, Rack::Cors do
         allow do
-          origins '*'
-          resource '*', headers: :any, methods: [:get, :post, :options]
+          origins 'https://elastic-montalcini-7aa734.netlify.app'
+          resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head]
         end
     end
 
