@@ -160,7 +160,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
-  bootsnap
+  bootsnap (>= 1.4.2)
   byebug
   listen (~> 3.2)
   mongoid (~> 7.0.5)
