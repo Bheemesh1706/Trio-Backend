@@ -1,6 +1,14 @@
 development:
-  clients: mongodb+srv://Imanity:39Ft4LgiQYzs3TZp@trio.e63dt.mongodb.net/chat_development?retryWrites=true&w=majority
+  clients: 
     default:
       uri: mongodb+srv://Imanity:39Ft4LgiQYzs3TZp@trio.e63dt.mongodb.net/chat_development?retryWrites=true&w=majority
       options:
         server_selection_timeout: 5
+
+production:
+  clients: 
+    default:
+      uri: mongodb+srv://Imanity:39Ft4LgiQYzs3TZp@trio.e63dt.mongodb.net/chat_development?retryWrites=true&w=majority
+      options:
+        server_selection_timeout: 5
+
