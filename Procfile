@@ -1,1 +1,1 @@
-web: rails s -p 3001
+web: rails s 
