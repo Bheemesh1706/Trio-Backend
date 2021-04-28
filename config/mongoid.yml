@@ -1,7 +1,6 @@
 development:
   clients:
     default:
-      uri: mongodb+srv://Imanity:39Ft4LgiQYzs3TZp@cluster0.e63dt.mongodb.net/chat_development?retryWrites=true&w=majority
+      uri: mongodb+srv://Imanity:39Ft4LgiQYzs3TZp@trio.e63dt.mongodb.net/chat_development?retryWrites=true&w=majority
       options:
         server_selection_timeout: 5
-        raise_not_found_error: false
