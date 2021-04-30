@@ -26,6 +26,10 @@ rails s -p 3001
   * Run this command to set up the config file for the localhost ```rails g mongoid:config```
   * [Click here to learn how to install mongodb locally](https://docs.mongodb.com/manual/installation)
   * **Don't forget to start the mongodb local server every time when you want to start the app** (Don't be a dumb like me)
+
+#### Cors Setup Instructins
+
+Change the origins field value to ```*``` in config/initializers/cors.rb for local deployment.
         
 
 
