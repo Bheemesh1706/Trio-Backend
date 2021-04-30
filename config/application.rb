@@ -38,13 +38,7 @@ module Trio
     config.api_only = true
     config.force_ssl = true
 
-    config.middleware.insert_before 0, Rack::Cors do
-        allow do
-          origins 'triofrontend.netlify.app'
-          resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head]
-          
-        end
-    end
+    
 
     config.generators do |g|
         g.orm :mongoid
