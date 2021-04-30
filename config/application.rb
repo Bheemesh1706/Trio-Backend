@@ -40,7 +40,7 @@ module Trio
 
     config.middleware.insert_before 0, Rack::Cors do
         allow do
-          origins 'elastic-montalcini-7aa734.netlify.app'
+          origins 'triofrontend.netlify.app'
           resource '*', headers: :any, methods: [:get, :post, :put, :patch, :delete, :options, :head]
           
         end
