@@ -30,8 +30,7 @@ Rails.application.configure do
 
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
-  config.action_cable.url = 'wss://trio7170.herokuapp.com/cable'
-
+  config.action_cable.url = "wss:://trio7170.herokuapp.com/cable"
   config.action_cable.allowed_request_origins = ['https://triofrontend.netlify.app/','http://triofrontend.netlify.app/']
   
 
