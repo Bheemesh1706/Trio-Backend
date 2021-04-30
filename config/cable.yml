@@ -5,6 +5,6 @@ test:
   adapter: test
 
 production:
-  adapter: async
-  # url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
-  # channel_prefix: trio_production
+  adapter: redis
+  url:  redis://redistogo:a327f9cb673f822f0b2ae7da70c36404@hammerjaw.redistogo.com:10176/
+  channel_prefix: trio_production

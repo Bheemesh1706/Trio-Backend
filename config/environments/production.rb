@@ -32,7 +32,7 @@ Rails.application.configure do
   # config.action_cable.mount_path = nil
   config.action_cable.url = 'wss://trio7170.herokuapp.com/cable'
 
-  config.action_cable.allowed_request_origins = ['https://trio7170.herokuapp.com/', 'http://trio7170.herokuapp.com/']
+  config.action_cable.allowed_request_origins = ['https://triofrontend.netlify.app/','http://triofrontend.netlify.app/']
   
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
